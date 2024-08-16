@@ -3,11 +3,10 @@ const app = express();
 const cors = require("cors");
 const pool = require("./db");
 
-//middleware
+// Middleware
 app.use(cors());
 app.use(express.json());
 
-var host = '192.168.0.103';
 const port = 5001;
 
 // Function to create the todos table if it doesn't exist
@@ -87,6 +86,6 @@ app.delete("/todos/:id", async (req, res) => {
     }
 });
 
-app.listen(port, host, () => {
-    console.log(`Listening at ${host}:${port}`);
+app.listen(port, () => {
+    console.log(`Listening at http://localhost:${port}`);
 });
