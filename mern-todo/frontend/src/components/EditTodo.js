@@ -1,4 +1,5 @@
 import React, { Fragment, useState } from "react";
+import API_URL from './config';
 
 //todo is a prop coming from ListTodos in the table
 //essentially a parameter to get the description of the todo
@@ -11,7 +12,7 @@ const EditTodo = ({ todo }) => {
         e.preventDefault();
         try {
             const body = { description };
-            const response = await fetch(`/api-todo/todos/${todo.todo_id}`, {
+            const response = await fetch(`${API_URL}${todo.todo_id}`, {
                 method: "PUT",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(body)

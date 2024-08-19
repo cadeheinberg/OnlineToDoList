@@ -1,4 +1,5 @@
 import React, { Fragment, useEffect, useState } from "react";
+import API_URL from './config';
 
 import EditTodo from "./EditTodo";
 
@@ -9,7 +10,7 @@ const ListTodos = () => {
     //deleteTodoFunction
     const deleteTodo = async (todo_id) => {
         try {
-            const deleteTodo = await fetch(`/api-todo/todos/${todo_id}`, {
+            const deleteTodo = await fetch(`${API_URL}${todo_id}`, {
                 method: "DELETE"
             });
 
@@ -23,7 +24,7 @@ const ListTodos = () => {
 
     const getTodos = async () => {
         try {
-            const response = await fetch("/api-todo/todos");
+            const response = await fetch(`${API_URL}`);
             const jsonData = await response.json();
 
             console.log(jsonData);

@@ -1,4 +1,5 @@
 import React, { Fragment, useState } from "react";
+import API_URL from './config';
 
 const InputTodo = () => {
 
@@ -13,7 +14,7 @@ const InputTodo = () => {
         e.preventDefault();
         try {
             const body = { description }
-            const response = await fetch("/api-todo/todos", {
+            const response = await fetch(`${API_URL}`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(body)
