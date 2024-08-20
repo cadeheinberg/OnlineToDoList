@@ -28,6 +28,7 @@ const InputTodo = () => {
     }
     return <Fragment>
         <h1 className="text-center mt-5">M.E.R.N. Todo List</h1>
+        <h5 className="text-center">By: Cade Heinberg</h5>
         <form className="d-flex mt-5" onSubmit={onSubmitForm}>
             <input type="text" className="form-control" value={description} onChange={
                 e => setDescription(e.currentTarget.value)
